@@ -35,7 +35,7 @@ public class RandomExample2 {
         } while (num6 == num1 || num6 == num2 || num6 == num3 || num6 == num4 || num6 == num5);
 
         // 생성된 로또 번호 출력
-        System.out.println("로또 번호: " + num1 + ", " + num2 + ", " + num3 + ", " + num4 + ", " + num5 + ", " + num6);
+//        System.out.println("로또 번호: " + num1 + ", " + num2 + ", " + num3 + ", " + num4 + ", " + num5 + ", " + num6);
         System.out.printf("로또번호: %d, %d, %d, %d, %d, %d\n", num1, num2, num3, num4, num5, num6);
     }
 }
