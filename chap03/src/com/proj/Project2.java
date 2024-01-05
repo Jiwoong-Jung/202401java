@@ -4,6 +4,62 @@ import java.util.Scanner;
 
 public class Project2 {
 
+	public static void displayMember(String memberName, String memberSSN, 
+			                                             String memberTel) {
+		System.out.println();
+		System.out.println("[입력된 내용]");
+		System.out.println("1. 이름: " + memberName);
+		System.out.println("2. 주민번호 앞 6자리: " + memberSSN); 
+		System.out.println("3. 전화번호: " + memberTel);
+	}
+	
+	public static String input(String comment, Scanner scanner) {
+		System.out.print(comment); 
+		return scanner.nextLine();
+	}
+	
+	public static int question2(Scanner scanner) {
+		int status = 0;
+		do {
+			System.out.print("가입절차를 계속 진행 하시겠습니까?(y/n) ");
+			String answer = scanner.nextLine();
+			switch (answer) {
+			case "n":
+			case "N":
+				status = 1;
+				return status;
+			case "y":
+			case "Y":
+				status = 2;
+				return status;
+			}
+		} while(true);
+	}
+	
+	public static int question(Scanner scanner) {
+		int status = 0;
+		do {
+			System.out.print("가입절차를 계속 진행 하시겠습니까?(y/n) ");
+			String answer = scanner.nextLine();
+			if (answer.equals("n") || answer.equals("N")) {
+//				run = true;
+//				continue AAA;
+				status = 1;
+				return status;
+			} else if (answer.equals("y") || answer.equals("Y")) {
+				status = 2;
+				return status;
+			}
+		} while(true);
+	}
+	
+	public static void menu() {
+		System.out.println("-------------------------------------");
+		System.out.println("1.로그인 | 2.회원가입 | 3.예금/출금 | 4.종료");
+		System.out.println("-------------------------------------");
+		System.out.print("선택> ");
+	}
+	
 	public static int login(boolean membershipStatus, boolean loginStatus, 
 			              Scanner scanner, String memberName, String memberSSN) {
 		int status = 0; // 초기화
@@ -44,11 +100,8 @@ public class Project2 {
 		Scanner scanner = new Scanner(System.in);
 		boolean run = true;
 		boolean run2 = false;
-		AAA: while (run) {
-			System.out.println("-------------------------------------");
-			System.out.println("1.로그인 | 2.회원가입 | 3.예금/출금 | 4.종료");
-			System.out.println("-------------------------------------");
-			System.out.print("선택> ");
+		while (run) {
+			menu();
 			int menuNum = Integer.parseInt(scanner.nextLine());
 			switch (menuNum) {
 			case 1:
@@ -65,30 +118,31 @@ public class Project2 {
 				if (membershipStatus) {
 					System.out.println("이미 회원 가입을 하셨습니다.");
 					System.out.println("회원이름:"+memberName);
-					do {
-						System.out.print("가입절차를 계속 진행 하시겠습니까?(y/n) ");
-						String answer = scanner.nextLine();
-						if (answer.equals("n") || answer.equals("N")) {
-							run = true;
-							continue AAA;
-						} else if (answer.equals("y") || answer.equals("Y")) {
-							break;
-						}
-					} while(true);
+					switch (question2(scanner)) {
+					case 1:
+						run = true;
+						continue;
+					case 2:
+						break;
+					
+					}
 				}
 				
-				System.out.println("[필수 정보 입력]"); 
-				System.out.print("1. 이름: ");
-				memberName = scanner.nextLine(); 
-				System.out.print("2. 주민번호 앞 6자리: ");
-				memberSSN = scanner.nextLine(); 
-				System.out.print("3. 전화번호: "); 
-				memberTel = scanner.nextLine();
-				System.out.println();
-				System.out.println("[입력된 내용]");
-				System.out.println("1. 이름: " + memberName);
-				System.out.println("2. 주민번호 앞 6자리: " + memberSSN); 
-				System.out.println("3. 전화번호: " + memberTel);
+//				System.out.println("[필수 정보 입력]"); 
+//				System.out.print("1. 이름: ");
+//				memberName = scanner.nextLine(); 
+//				
+//				System.out.print("2. 주민번호 앞 6자리: ");
+//				memberSSN = scanner.nextLine(); 
+//				
+//				System.out.print("3. 전화번호: "); 
+//				memberTel = scanner.nextLine();
+				
+				memberName = input("[필수 정보 입력]\n1. 이름: ", scanner);
+				memberSSN = input("2. 주민번호 앞 6자리: ", scanner); 
+				memberTel = input("3. 전화번호: ", scanner);
+				
+				displayMember(memberName, memberSSN, memberTel);
 				membershipStatus = true;
 				break;
 			case 3:
