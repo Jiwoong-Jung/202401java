@@ -4,6 +4,36 @@ import java.util.Scanner;
 
 public class Project2 {
 
+	public static int login(boolean membershipStatus, boolean loginStatus, 
+			              Scanner scanner, String memberName, String memberSSN) {
+		int status = 0; // 초기화
+		if (!membershipStatus) {
+			status = 1;
+			System.out.println("회원 가입을 하시기 바랍니다.");
+			return status;
+		}
+		if (loginStatus) {  // 로그인 여부 확인
+			status = 2;
+			System.out.println("이미 로그인 상태입니다.");
+			return status;
+		}
+		System.out.print("아이디:");  //출력문
+		String name = scanner.nextLine(); // name 변수의 값 입력
+		System.out.print("패스워드:");
+		String strPassword = scanner.nextLine();//패스워드입력
+		if (name.equals(memberName)) {
+			if (strPassword.equals(memberSSN)) {
+				status = 3;
+				System.out.println("로그인 성공");
+			} else {
+				System.out.println("로그인 실패:패스워드가 틀림");
+			}
+		} else {
+			System.out.println("로그인 실패:아이디 존재하지 않음");
+		}
+		return status;
+	}
+	
 	public static void main(String[] args) {
 		String memberName = "";
 		String memberSSN = "";
@@ -22,28 +52,13 @@ public class Project2 {
 			int menuNum = Integer.parseInt(scanner.nextLine());
 			switch (menuNum) {
 			case 1:
-				if (!membershipStatus) {
-					System.out.println("회원 가입을 하시기 바랍니다.");
+				switch (login(membershipStatus, loginStatus, scanner, memberName, memberSSN)) {
+				case 1:  // 회원 가입이 필요한 상태
+				case 2:  // 이미 로그인한 상태
 					continue;
-				}
-				if (loginStatus) {  // 로그인 여부 확인
-					System.out.println("이미 로그인 상태입니다.");
-					continue;
-				}
-				System.out.print("아이디:");  //출력문
-				String name = scanner.nextLine(); // name 변수의 값 입력
-				System.out.print("패스워드:");
-				String strPassword = scanner.nextLine();//패스워드입력
-//				int password = Integer.parseInt(strPassword); // stpassword값을 정수로 변환
-				if (name.equals(memberName)) {
-					if (strPassword.equals(memberSSN)) {
-						loginStatus = true;
-						System.out.println("로그인 성공");
-					} else {
-						System.out.println("로그인 실패:패스워드가 틀림");
-					}
-				} else {
-					System.out.println("로그인 실패:아이디 존재하지 않음");
+				case 3:  // 로그인 성공 상태
+					loginStatus = true;
+					break;
 				}
 				break;
 			case 2:
