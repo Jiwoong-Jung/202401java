@@ -4,6 +4,42 @@ import java.util.Scanner;
 
 public class Project2 {
 
+	public static int deposit(boolean loginStatus, boolean run2, 
+			                      Scanner scanner, int balance) {
+		if (loginStatus) {  // 로그인 여부
+			run2 = true;
+		} else {
+			System.out.println("로그인 하시기 바랍니다.");
+		}
+		while (run2) {
+			System.out.println("-------------------------------------");
+			System.out.println("1.예금 | 2.출금 | 3.잔고 | 4.종료");
+			System.out.println("-------------------------------------");
+			System.out.print("선택> ");
+			int menuNum2 = Integer.parseInt(scanner.nextLine());
+			switch (menuNum2) {
+			case 1:
+				System.out.print("예금액> ");
+				balance += Integer.parseInt(scanner.nextLine());
+				break;
+			case 2:
+				System.out.print("출금액> ");
+				balance -= Integer.parseInt(scanner.nextLine());
+				break;
+			case 3:
+				System.out.print("잔고> ");
+				System.out.println(balance);
+				break;
+			case 4:
+				run2 = false;
+				break;
+			}
+			System.out.println();
+		}
+		return balance;
+
+	}
+	
 	public static void displayMember(String memberName, String memberSSN, 
 			                                             String memberTel) {
 		System.out.println();
@@ -42,8 +78,6 @@ public class Project2 {
 			System.out.print("가입절차를 계속 진행 하시겠습니까?(y/n) ");
 			String answer = scanner.nextLine();
 			if (answer.equals("n") || answer.equals("N")) {
-//				run = true;
-//				continue AAA;
 				status = 1;
 				return status;
 			} else if (answer.equals("y") || answer.equals("Y")) {
@@ -127,55 +161,17 @@ public class Project2 {
 					
 					}
 				}
-				
-//				System.out.println("[필수 정보 입력]"); 
-//				System.out.print("1. 이름: ");
-//				memberName = scanner.nextLine(); 
-//				
-//				System.out.print("2. 주민번호 앞 6자리: ");
-//				memberSSN = scanner.nextLine(); 
-//				
-//				System.out.print("3. 전화번호: "); 
-//				memberTel = scanner.nextLine();
-				
+								
 				memberName = input("[필수 정보 입력]\n1. 이름: ", scanner);
 				memberSSN = input("2. 주민번호 앞 6자리: ", scanner); 
 				memberTel = input("3. 전화번호: ", scanner);
 				
 				displayMember(memberName, memberSSN, memberTel);
 				membershipStatus = true;
+				loginStatus = false;
 				break;
 			case 3:
-				if (loginStatus) {  // 로그인 여부
-					run2 = true;
-				} else {
-					System.out.println("로그인 하시기 바랍니다.");
-				}
-				while (run2) {
-					System.out.println("-------------------------------------");
-					System.out.println("1.예금 | 2.출금 | 3.잔고 | 4.종료");
-					System.out.println("-------------------------------------");
-					System.out.print("선택> ");
-					int menuNum2 = Integer.parseInt(scanner.nextLine());
-					switch (menuNum2) {
-					case 1:
-						System.out.print("예금액> ");
-						balance += Integer.parseInt(scanner.nextLine());
-						break;
-					case 2:
-						System.out.print("출금액> ");
-						balance -= Integer.parseInt(scanner.nextLine());
-						break;
-					case 3:
-						System.out.print("잔고> ");
-						System.out.println(balance);
-						break;
-					case 4:
-						run2 = false;
-						break;
-					}
-					System.out.println();
-				}
+				balance = deposit(loginStatus, run2, scanner, balance);
 				break;
 			case 4:
 				run = false;
