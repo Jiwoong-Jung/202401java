@@ -7,7 +7,7 @@ public class Project1 {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		boolean run = true;
-		Account acc;
+		Account acc = null;
 		while (run) {
 			System.out.println("-------------------------------------");
 			System.out.println("1.로그인 | 2.회원가입 | 3.예금/출금 | 4.종료");
@@ -18,6 +18,15 @@ public class Project1 {
 			case 1:
 				// 로그인 처리
 				System.out.println("로그인 처리");
+				System.out.print("아이디: ");
+				String id = scanner.nextLine();
+				System.out.print("패스워드: ");
+				String pass = scanner.nextLine();
+				if (id.equals(acc.name)) {
+					if (pass.equals(acc.ssn)) {
+						System.out.println("로그인 성공!");
+					}
+				}
 				break;
 			case 2:
 				// 회원 가입
