@@ -9,6 +9,7 @@ public class Project1 {
 		boolean run = true;
 		boolean run2 = true;
 		Account[] acc = new Account[3];
+		int idx = -1;
 		while (run) {
 			System.out.println("-------------------------------------");
 			System.out.println("1.로그인 | 2.회원가입 | 3.예금/출금 | 4.종료");
@@ -68,15 +69,15 @@ public class Project1 {
 					switch (menuNum2) {
 					case 1:
 						System.out.print("예금액> ");
-//						acc.balance += Integer.parseInt(scanner.nextLine());
+						acc[idx].balance += Integer.parseInt(scanner.nextLine());
 						break;
 					case 2:
 						System.out.print("출금액> ");
-//						acc.balance -= Integer.parseInt(scanner.nextLine());
+						acc[idx].balance -= Integer.parseInt(scanner.nextLine());
 						break;
 					case 3:
 						System.out.print("잔고> ");
-//						System.out.println(acc.balance);
+						System.out.println(acc[idx].balance);
 						break;
 					case 4:
 						run2 = false;
