@@ -8,7 +8,7 @@ public class MyClass {
 	public MyClass(int x) {
 //		this.x = x;
 		this(x, 0, 0);
-		System.out.println("1번째 생성자");
+		
 	}
 
 	public MyClass(int x, int y) {
