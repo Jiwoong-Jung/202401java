@@ -14,10 +14,13 @@ public class Project1 {
 		acc[1] = new Account("김두울", "921224", "010-1234-1234");
 		acc[2] = new Account("김세엣", "931224", "010-1234-1234");
 		int idx = -1;
-		
+		boolean login = false;
 		while (run) {
 			System.out.println("-------------------------------------");
-			System.out.println("1.로그인 | 2.회원가입 | 3.예금/출금 | 4.종료");
+			if (login) {
+				System.out.println(acc[idx].name + " 고객님으로 로그인 상태입니다.");
+			}
+			System.out.println("1.로그인 | 2.회원수정 | 3.예금/출금 | 4.종료");
 			System.out.println("-------------------------------------");
 			System.out.print("선택> ");
 			int menuNum = Integer.parseInt(scanner.nextLine());
@@ -35,34 +38,37 @@ public class Project1 {
 							System.out.println("로그인 성공!");
 							idx = i;
 							run2 = true;
-						} else {
-							System.out.println("로그인 실패!");
-						}
+							login = true;
+						} 
 					}
 				}
-//				if (id.equals(acc.name)) {
-//					if (pass.equals(acc.ssn)) {
-//						System.out.println("로그인 성공!");
-//					}
-//				}
 				break;
 			case 2:
-				// 회원 가입
-				System.out.println("회원 가입");
-				for (int i=0; i < acc.length; i++) {
+				// 회원 수정
+				if (login == true) {
+					System.out.println("회원 정보 수정");
 					System.out.print("이름: ");
 					String name = scanner.nextLine();
 					System.out.print("생년월일: ");
 					String ssn = scanner.nextLine();
 					System.out.print("전화번호: ");
 					String tel = scanner.nextLine();
-					acc[i] = new Account(name, ssn, tel);
-					System.out.println(acc[i]);
+					acc[idx] = new Account(name, ssn, tel);
+					System.out.println(acc[idx]);
+				} else {
+					System.out.println("로그인 후 회원 정보를 수정하세요.");
 				}
-				
 
-//				acc = new Account(name, ssn, tel);
-//				System.out.println(acc);
+//				for (int i=0; i < acc.length; i++) {
+//					System.out.print("이름: ");
+//					String name = scanner.nextLine();
+//					System.out.print("생년월일: ");
+//					String ssn = scanner.nextLine();
+//					System.out.print("전화번호: ");
+//					String tel = scanner.nextLine();
+//					acc[i] = new Account(name, ssn, tel);
+//					System.out.println(acc[i]);
+//				}
 				break;
 			case 3:
 				// 예금 출금
