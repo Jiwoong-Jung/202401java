@@ -46,31 +46,25 @@ public class Project1 {
 			case 2:
 				// 회원 수정
 				if (login == true) {
-					System.out.println("회원 정보 수정");
+					System.out.println("회원 수정");
 					System.out.print("이름: ");
-					String name = scanner.nextLine();
+					acc[idx].name = scanner.nextLine();
 					System.out.print("생년월일: ");
-					String ssn = scanner.nextLine();
+					acc[idx].ssn = scanner.nextLine();
 					System.out.print("전화번호: ");
-					String tel = scanner.nextLine();
-					acc[idx] = new Account(name, ssn, tel);
+					acc[idx].tel = scanner.nextLine();
+//					acc[idx] = new Account(name, ssn, tel);
 					System.out.println(acc[idx]);
+					login = false;
 				} else {
-					System.out.println("로그인 후 회원 정보를 수정하세요.");
+					System.out.println("로그인 후 회원 수정을 하세요.");
 				}
-
-//				for (int i=0; i < acc.length; i++) {
-//					System.out.print("이름: ");
-//					String name = scanner.nextLine();
-//					System.out.print("생년월일: ");
-//					String ssn = scanner.nextLine();
-//					System.out.print("전화번호: ");
-//					String tel = scanner.nextLine();
-//					acc[i] = new Account(name, ssn, tel);
-//					System.out.println(acc[i]);
-//				}
 				break;
 			case 3:
+				if (!login) {
+					System.out.println("로그인 후 사용하세요.");
+					break;
+				}
 				// 예금 출금
 				System.out.println("예금 출금");
 				while (run2) {
