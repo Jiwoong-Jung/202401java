@@ -4,12 +4,17 @@ import java.util.Scanner;
 
 public class Project1 {
 
+	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		boolean run = true;
 		boolean run2 = true;
 		Account[] acc = new Account[3];
+		acc[0] = new Account("김하나", "911224", "010-1234-1234");
+		acc[1] = new Account("김두울", "921224", "010-1234-1234");
+		acc[2] = new Account("김세엣", "931224", "010-1234-1234");
 		int idx = -1;
+		
 		while (run) {
 			System.out.println("-------------------------------------");
 			System.out.println("1.로그인 | 2.회원가입 | 3.예금/출금 | 4.종료");
@@ -28,6 +33,8 @@ public class Project1 {
 					if (id.equals(acc[i].name)) {
 						if (pass.equals(acc[i].ssn)) {
 							System.out.println("로그인 성공!");
+							idx = i;
+							run2 = true;
 						} else {
 							System.out.println("로그인 실패!");
 						}
