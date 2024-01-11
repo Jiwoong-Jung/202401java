@@ -5,6 +5,18 @@ import java.util.Scanner;
 public class ArrInArrEx {
 
 	public static void main(String[] args) {
+//		int[] array;
+//		array = {1,2,3};
+		
+		int[][] array = {
+				{95, 86},
+				{83, 92, 96},
+				{78, 83, 93, 87, 88}
+		};
+		
+		System.out.println(array[2].length);
+		
+		int[][] scores;
 		int sum = 0, count = 0;
 		double avg;
 		Scanner scan = new Scanner(System.in);
@@ -12,7 +24,7 @@ public class ArrInArrEx {
 		int n1 = scan.nextInt();
 		System.out.print("정수2 입력:");
 		int n2 = scan.nextInt();
-		int[][] scores = new int[n1][n2];
+		scores = new int[n1][n2];
 
 		for (int i=0; i < scores.length; i++) {
 			for (int j=0; j < scores[i].length; j++) {
