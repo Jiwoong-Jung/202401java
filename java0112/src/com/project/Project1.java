@@ -69,7 +69,7 @@ public class Project1 {
 		}
 	}
 	public static void main(String[] args) {
-		Session session = new Session(true, true);
+		Session session = new Session(true, false);
 		menu1(session);
 	}
 }
