@@ -35,7 +35,8 @@ public class Project1 {
 				System.out.println("예금 출금");
 				break;
 			case 4:
-				session.setRun2(false);
+//				session.setRun2(false);
+				session.setMenuState(MenuState.DEPOSIT_EXIT);
 				System.out.println("프로그램 종료");
 				break;
 			}
@@ -60,12 +61,14 @@ public class Project1 {
 				// 예금 출금
 				System.out.println("예금 출금");
 				if (session.getLoginInfo() != null) { // 로그인 성공 후
-					session.setRun2(true);
+//					session.setRun2(true);
+					session.setMenuState(MenuState.DEPOSIT);
 					menu2(session);
 				}
 				break;
 			case 4:
-				session.setRun(false);
+//				session.setRun(false);
+				session.setMenuState(MenuState.TOP_EXIT);
 				System.out.println("프로그램 종료");
 				break;
 			}
