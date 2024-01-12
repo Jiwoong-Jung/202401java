@@ -59,7 +59,10 @@ public class Project1 {
 			case 3:
 				// 예금 출금
 				System.out.println("예금 출금");
-				menu2(session);
+				if (session.getLoginInfo() != null) { // 로그인 성공 후
+					session.setRun2(true);
+					menu2(session);
+				}
 				break;
 			case 4:
 				session.setRun(false);
@@ -69,7 +72,8 @@ public class Project1 {
 		}
 	}
 	public static void main(String[] args) {
-		Session session = new Session(true, false);
+		LoginInfo loginInfo = new LoginInfo("id", "pass");
+		Session session = new Session(true, false, loginInfo);
 		menu1(session);
 	}
 }

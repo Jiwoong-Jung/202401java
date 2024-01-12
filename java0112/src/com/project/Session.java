@@ -3,8 +3,32 @@ package com.project;
 public class Session {
 	private boolean run;
 	private boolean run2;
-	LoginInfo loginInfo;
+	private LoginInfo loginInfo;
+	private MenuState menuState = MenuState.TOP;
 	
+	public LoginInfo getLoginInfo() {
+		return loginInfo;
+	}
+
+	public void setLoginInfo(LoginInfo loginInfo) {
+		this.loginInfo = loginInfo;
+	}
+
+	public MenuState getMenuState() {
+		return menuState;
+	}
+
+	public void setMenuState(MenuState menuState) {
+		if (menuState == MenuState.DEPOSIT) {
+			run2 = true;
+		} else if (menuState == MenuState.TOP_EXIT) {
+			run = false;
+		} else if (menuState == MenuState.DEPOSIT_EXIT) {
+			run2 = false;
+		}
+		this.menuState = menuState;
+	}
+
 	public Session(boolean run, boolean run2, LoginInfo loginInfo) {
 		super();
 		this.run = run;
