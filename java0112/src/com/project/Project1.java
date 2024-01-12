@@ -10,9 +10,9 @@ public class Project1 {
 		System.out.println("-------------------------------------");
 	}
 	
-	public static void menu1() {
-		boolean run = true;
-		while (run) {
+	public static void menu1(Session session) {
+//		boolean run = true;
+		while (session.run) {
 			disp1();
 			System.out.print("선택> ");
 			int menuNum = Integer.parseInt(scanner.nextLine());
@@ -30,13 +30,21 @@ public class Project1 {
 				System.out.println("예금 출금");
 				break;
 			case 4:
-				run = false;
+				session.run = false;
 				break;
 			}
 		}
 		System.out.println("프로그램 종료");
 	}
 	public static void main(String[] args) {
-		menu1();
+		Session session = new Session();
+		session.run = true;
+		menu1(session);
 	}
 }
+
+
+
+
+
+
