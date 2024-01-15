@@ -33,6 +33,7 @@ public class ObjEx {
 		ObjectInputStream ois = new ObjectInputStream(fis);
 		Acc acc2 = (Acc) ois.readObject();
 		System.out.println(acc2);
+		ois.close();
 	}
 
 }
