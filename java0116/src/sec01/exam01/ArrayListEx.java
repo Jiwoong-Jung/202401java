@@ -2,11 +2,23 @@ package sec01.exam01;
 
 import java.util.ArrayList;
 import java.util.List;
+class Student {
+	String name;
+	int kor;
+	public Student(String name, int kor) {
+		this.name = name;
+		this.kor = kor;
+	}
+}
 
 public class ArrayListEx {
 
 	public static void main(String[] args) {
-		String[] strArr = new String[100];  // 고정형 배열, 속도빠름
+		Student[] strArr = new Student[100];  // 고정형 배열, 속도빠름
+		List<Student> slist = new ArrayList<>();
+		slist.add(new Student("홍길동", 90));
+		//....
+		
 		ArrayList<String> alist = new ArrayList<String>();
 		// '어레이리스트'라고 읽음. 문자열을 가변적인 배열로
 		List<String> list = new ArrayList<>();  // 축약형
