@@ -3,6 +3,7 @@ package java0116;
 class Aa {
 	private int y;
 	final int x;
+	void method() {}
 	Aa() {
 		this.x = 0;
 	}
@@ -15,7 +16,9 @@ class Aa {
 	}
 }
 public class Bb extends Aa {
+	@Override
 	void method() {
+		super.method();
 //		x = 40; final 필드 값 변경 안됨
 //		System.out.println(y); private 접근 안됨
 	}
