@@ -9,6 +9,11 @@ class Student {
 		this.name = name;
 		this.kor = kor;
 	}
+	@Override
+	public String toString() {
+		return "Student [name=" + name + ", kor=" + kor + "]";
+	}
+	
 }
 
 public class ArrayListEx {
@@ -17,6 +22,11 @@ public class ArrayListEx {
 		Student[] strArr = new Student[100];  // 고정형 배열, 속도빠름
 		List<Student> slist = new ArrayList<>();
 		slist.add(new Student("홍길동", 90));
+		slist.add(new Student("홍길철", 84));
+		slist.add(new Student("홍길순", 97));
+		for (Student student : slist) {
+			System.out.println(student);
+		}
 		//....
 		
 		ArrayList<String> alist = new ArrayList<String>();
