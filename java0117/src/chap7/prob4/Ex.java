@@ -4,7 +4,7 @@ public class Ex {
 
 	public static void main(String[] args) {
 		Controller controller = new Controller();
-		controller.setService(null);
+		controller.setService(new BService());
 
 	}
 
