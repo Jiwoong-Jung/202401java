@@ -1,8 +1,15 @@
 package chap7.prob3;
 
 public class Ex {
-
+// list.add(new Student("ddd"));
+	
+	public static void method(B b) {
+		
+	}
+	
 	public static void main(String[] args) {
+		method(new B());
+		
 		B b1 = new B();  // 1번
 		B b3 = new D();  // 3번
 		B b4 = new E();  // 4번
