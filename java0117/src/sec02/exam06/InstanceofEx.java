@@ -6,8 +6,8 @@ public class InstanceofEx {
 //		Parent parentA = new Child();
 //		method2(parentA);
 		
-//		Parent parentB = new Parent();
-		Parent parentB = new Child();
+		Parent parentB = new Parent();
+//		Parent parentB = new Child();
 		if (parentB instanceof Child) {
 			method2(parentB);
 		} else {
