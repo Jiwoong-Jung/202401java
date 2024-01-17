@@ -7,6 +7,6 @@ public abstract class Animal {  // 추상 클래스
 		System.out.println("숨을 쉰다.");
 	}
 	
-	public abstract void sound();  // 추상 메소드
+	public abstract void sound();  // 추상 메소드 선언
 
 }
