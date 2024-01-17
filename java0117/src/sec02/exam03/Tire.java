@@ -12,9 +12,9 @@ public class Tire {
 
 	public boolean roll() {
 		++accumulatedRotation;		
-		if(accumulatedRotation<maxRotation) {
+		if(accumulatedRotation < maxRotation) {
 			System.out.println(location + " Tire 수명: " 
-						+ (maxRotation-accumulatedRotation) + "회");
+						+ (maxRotation - accumulatedRotation) + "회");
 			return true;
 		} else {
 			System.out.println("*** " + location + " Tire 펑크 ***");
