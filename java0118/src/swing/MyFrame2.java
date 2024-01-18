@@ -4,11 +4,13 @@ import java.awt.Container;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-public class MyFrame2 extends JFrame implements ActionListener{
+public class MyFrame2 extends JFrame implements ActionListener, MouseListener{
 	JButton jb = new JButton("버튼1");
 	JButton jb2 = new JButton("버튼2");
 	public MyFrame2() {
@@ -19,6 +21,7 @@ public class MyFrame2 extends JFrame implements ActionListener{
 		this.setLocation(300, 300);
 		this.setTitle("오늘은 이벤트");
 		
+		con.addMouseListener(this);
 		con.setLayout(new FlowLayout());
 		
 		con.add(jb);
@@ -40,6 +43,36 @@ public class MyFrame2 extends JFrame implements ActionListener{
 			System.out.println("버튼2");
 		}
 		
+		
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		System.out.println(e.getX() + ", " + e.getY());
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
 		
 	}
 }
