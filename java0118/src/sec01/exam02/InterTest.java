@@ -5,4 +5,5 @@ public interface InterTest {
 	default void test1() {
 		System.out.println("test1()");
 	}
+	default void test3() {};
 }
