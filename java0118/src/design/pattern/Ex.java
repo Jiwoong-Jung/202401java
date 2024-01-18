@@ -29,6 +29,8 @@ public class Ex {
 		String door = doorProduct.makeAssemble();
 		System.out.println(tire);
 		System.out.println(door);
+		
+		//System.out.println(carFactory.createTire().makeAssemble());
 
 	}
 
