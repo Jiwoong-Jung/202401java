@@ -12,4 +12,10 @@ public class SmartPhone2 extends Phone {
 	public void printX() {
 		System.out.println(x);
 	}
+
+	@Override
+	public String ring(int tel) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

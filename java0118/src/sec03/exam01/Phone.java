@@ -8,4 +8,6 @@ public abstract class Phone {
 		this.x = x;
 	}
 	
+	public abstract String ring(int tel);
+	
 }
