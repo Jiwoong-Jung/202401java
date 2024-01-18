@@ -18,6 +18,7 @@ public class MyFrame extends JFrame implements ActionListener {
 	JTextField jt3 = new JTextField();
 	JTextField jt4 = new JTextField();
 	JTextField jt5 = new JTextField();
+	JTextField jt6 = new JTextField();
 	public MyFrame() {
 		jb1.addActionListener(this);
 		jb2.addActionListener(this);
@@ -79,7 +80,7 @@ public class MyFrame extends JFrame implements ActionListener {
 		lb6.setLocation(200, 80);
 		lb6.setSize(100, 30);
 		
-		JTextField jt6 = new JTextField();
+		
 		con.add(jt6);
 		jt6.setLocation(250, 80);
 		jt6.setSize(100, 30);
@@ -134,9 +135,10 @@ public class MyFrame extends JFrame implements ActionListener {
 			break;
 		case "입력":
 			System.out.println("입력 실행");
-			System.out.printf("%s,%s,%s,%s,%s\n",
+			System.out.printf("%s,%s,%s,%s,%s,%s\n",
 					jt1.getText(), jt2.getText(),
-					jt3.getText(), jt4.getText(), jt5.getText());
+					jt3.getText(), jt4.getText(),
+					jt5.getText(), jt6.getText());
 			break;
 		default:
 			break;
