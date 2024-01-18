@@ -34,7 +34,15 @@ public class MyFrame2 extends JFrame implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		System.out.println(e.getSource()==jb);
+		if (e.getSource()==jb) {
+			System.out.println("버튼1");
+		} else if (e.getSource()==jb2) {
+			System.out.println("버튼2");
+		}
+		
 		
 	}
 }
+
+
+
