@@ -13,6 +13,7 @@ public class MyClass implements InterTest {
 		
 	}
 	public static void main(String[] args) {
+		InterTest.test5();
 		InterTest it = new MyClass();
 		it.test1();
 
