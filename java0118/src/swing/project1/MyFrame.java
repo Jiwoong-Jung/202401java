@@ -1,6 +1,8 @@
 package swing.project1;
 
 import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -8,8 +10,12 @@ import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-public class MyFrame extends JFrame {
+public class MyFrame extends JFrame implements ActionListener {
+	JButton jb1 = new JButton("전체내용");
+	JButton jb2 = new JButton("입력");
 	public MyFrame() {
+		jb1.addActionListener(this);
+		jb2.addActionListener(this);
 		Container con = this.getContentPane();
 		con.setLayout(null);
 		
@@ -73,12 +79,12 @@ public class MyFrame extends JFrame {
 		jt6.setLocation(250, 80);
 		jt6.setSize(100, 30);
 		
-		JButton jb1 = new JButton("전체내용");
+		
 		jb1.setLocation(20, 350);
 		jb1.setSize(100, 30);
 		con.add(jb1);
 		
-		JButton jb2 = new JButton("입력");
+		
 		jb2.setLocation(200, 350);
 		jb2.setSize(100, 30);
 		con.add(jb2);
@@ -113,4 +119,25 @@ public class MyFrame extends JFrame {
 	public static void main(String... ar) {
 		new MyFrame();
 	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+//		System.out.println(e.getActionCommand());
+		switch (e.getActionCommand()) {
+		case "전체내용":
+			System.out.println("전체내용 나오기");
+			break;
+		case "입력":
+			System.out.println("입력 실행");
+			break;
+		default:
+			break;
+		}
+		
+	}
 }
+
+
+
+
+
