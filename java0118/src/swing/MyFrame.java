@@ -2,6 +2,7 @@ package swing;
 
 import java.awt.Container;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 
 public class MyFrame extends JFrame {
@@ -11,6 +12,10 @@ public class MyFrame extends JFrame {
 		this.setVisible(true);
 		this.setSize(500, 300);
 		this.setLocation(300, 300);
+		this.setTitle("오늘은 이벤트");
+		
+		JButton jb = new JButton("클릭");
+		con.add(jb);
 	}
 	
 	public static void main(String[] ar) {
