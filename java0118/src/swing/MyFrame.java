@@ -11,7 +11,7 @@ import javax.swing.JFrame;
 class MyAction implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		System.out.println("클릭!");
+		System.out.println(e.getSource());
 	}
 	
 }
@@ -31,6 +31,7 @@ public class MyFrame extends JFrame {
 		jb.addActionListener(new MyAction());
 		JButton jb2 = new JButton("버튼2");
 		con.add(jb2);
+		jb2.addActionListener(new MyAction());
 	}
 	
 	public static void main(String[] ar) {
