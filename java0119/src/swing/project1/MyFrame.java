@@ -163,10 +163,13 @@ public class MyFrame extends JFrame implements ActionListener {
 			String tel = jt4.getText();
 			String ssn = jt5.getText();
 			int balance = Integer.parseInt(jt6.getText());
-			list.add(new Account(name, id, pass, tel, ssn, balance));
-			String str = String.format("%s,%s,%s,%s,%s,%d",
-					name, id, pass, tel, ssn, balance);
-			lb7.setText(str);
+			Account acc = 
+					new Account(name, id, pass, tel, ssn, balance);
+			list.add(acc);
+//			String str = String.format("%s,%s,%s,%s,%s,%d",
+//					name, id, pass, tel, ssn, balance);
+//			lb7.setText(str);
+			lb7.setText(acc.toString());
 			break;
 		default:
 			break;
