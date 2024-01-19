@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -19,6 +20,8 @@ public class MyFrame extends JFrame implements ActionListener {
 	JTextField jt4 = new JTextField();
 	JTextField jt5 = new JTextField();
 	JTextField jt6 = new JTextField();
+	JLabel lb7 = new JLabel("메시지: 나오나요? 상태 메시지!");
+	JTextArea ta = new JTextArea();
 	public MyFrame() {
 		jb1.addActionListener(this);
 		jb2.addActionListener(this);
@@ -110,10 +113,14 @@ public class MyFrame extends JFrame implements ActionListener {
 		jb5.setSize(100, 30);
 		con.add(jb5);
 		
-		JTextArea ta = new JTextArea();
-		ta.setLocation(20, 120);
-		ta.setSize(830, 200);
-		con.add(ta);
+		JScrollPane scroll = new JScrollPane(ta);
+		scroll.setLocation(20, 120);
+		scroll.setSize(830, 200);
+		con.add(scroll);
+//		JTextArea ta = new JTextArea();
+//		ta.setLocation(20, 120);
+//		ta.setSize(830, 200);
+//		con.add(ta);
 		
 		this.setLocation(200, 100);
 		this.setTitle("스윙 연습");
