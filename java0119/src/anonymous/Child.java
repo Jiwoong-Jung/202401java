@@ -11,6 +11,14 @@ public class Child extends Parent {
 	}
 
 	public static void main(String[] args) {
+		Parent parent3 = new Child();
+		Child child = (Child) parent3;
+		
+		
+		
+		
+		
+		
 		new Child();  // 익명 객체
 		Parent parent1 = new Parent();
 		Parent parent = new Parent() {
