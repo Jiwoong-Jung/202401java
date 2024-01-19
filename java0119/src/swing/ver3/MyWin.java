@@ -29,6 +29,7 @@ public class MyWin extends JFrame implements ActionListener{
 		this.setVisible(true);
 		
 		bt1.addActionListener(this);
+		bt2.addActionListener(this);
 	}
 
 	public static void main(String[] args) {
@@ -37,7 +38,12 @@ public class MyWin extends JFrame implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		System.out.println("클릭!");
+//		System.out.println("클릭!");
+		if (e.getSource().equals(bt1)) {
+			System.out.println("버튼1");
+		} else if (e.getSource().equals(bt2)) {
+			System.out.println("버튼2");
+		}
 		
 	}
 
