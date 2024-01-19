@@ -3,6 +3,8 @@ package swing.project1;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -12,6 +14,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class MyFrame extends JFrame implements ActionListener {
+	List<Account> list = new ArrayList<>();
 	JButton jb1 = new JButton("전체내용");
 	JButton jb2 = new JButton("입력");
 	JTextField jt1 = new JTextField();
@@ -27,6 +30,10 @@ public class MyFrame extends JFrame implements ActionListener {
 		jb2.addActionListener(this);
 		Container con = this.getContentPane();
 		con.setLayout(null);
+		
+		con.add(lb7);
+		lb7.setLocation(20, 420);
+		lb7.setSize(400, 30);
 		
 		JLabel lb1 = new JLabel("이름");
 		con.add(lb1);
@@ -138,14 +145,28 @@ public class MyFrame extends JFrame implements ActionListener {
 //		System.out.println(e.getActionCommand());
 		switch (e.getActionCommand()) {
 		case "전체내용":
-			System.out.println("전체내용 나오기");
+			lb7.setText("전체내용 나오기");
+			for (Account acc : list) {
+				ta.append(acc.toString());
+				ta.append("\n");
+			}
 			break;
 		case "입력":
-			System.out.println("입력 실행");
-			System.out.printf("%s,%s,%s,%s,%s,%s\n",
-					jt1.getText(), jt2.getText(),
-					jt3.getText(), jt4.getText(),
-					jt5.getText(), jt6.getText());
+//			System.out.println("입력 실행");
+//			System.out.printf("%s,%s,%s,%s,%s,%s\n",
+//					jt1.getText(), jt2.getText(),
+//					jt3.getText(), jt4.getText(),
+//					jt5.getText(), jt6.getText());
+			String name = jt1.getText();
+			String id = jt2.getText();
+			String pass = jt3.getText();
+			String tel = jt4.getText();
+			String ssn = jt5.getText();
+			int balance = Integer.parseInt(jt6.getText());
+			list.add(new Account(name, id, pass, tel, ssn, balance));
+			String str = String.format("%s,%s,%s,%s,%s,%d",
+					name, id, pass, tel, ssn, balance);
+			lb7.setText(str);
 			break;
 		default:
 			break;

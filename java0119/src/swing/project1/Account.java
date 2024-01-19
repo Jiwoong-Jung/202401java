@@ -11,6 +11,16 @@ public class Account implements Serializable {
 	private int balance;
 	
 	
+	
+	public Account(String name, String id, String pass, String tel, String ssn, int balance) {
+		super();
+		this.name = name;
+		this.id = id;
+		this.pass = pass;
+		this.tel = tel;
+		this.ssn = ssn;
+		this.balance = balance;
+	}
 	public Account(String name, String id, String pass, String tel, String ssn) {
 		super();
 		this.name = name;
