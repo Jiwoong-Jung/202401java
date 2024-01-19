@@ -45,8 +45,7 @@ public class MyWin extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("종료합니다.");
-				System.exit(0); // 0: 정상종료
+				confirmExit();
 
 			}
 		});
@@ -54,7 +53,7 @@ public class MyWin extends JFrame {
 
 	public void confirmExit() {
 		int answer = JOptionPane.showConfirmDialog(this, "종료하시겠습니까?", 
-				                         "확인",JOptionPane.YES_NO_OPTION );
+				                         "확인", JOptionPane.YES_NO_OPTION);
 		if(answer==JOptionPane.YES_OPTION){  //사용자가 yes를 눌렀을 경우
 			System.out.println("프로그램을 종료합니다.");
 			System.exit(0);
