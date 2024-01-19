@@ -61,6 +61,7 @@ public class MyWin extends JFrame {
 				                         "확인", JOptionPane.YES_NO_OPTION);
 		if(answer==JOptionPane.YES_OPTION){  //사용자가 yes를 눌렀을 경우
 			System.out.println("프로그램을 종료합니다.");
+			lbState.setText("프로그램을 종료합니다.");
 			// 파일로 객체를 보내는 일 처리
 			System.exit(0);
 		} else{  //사용자가 Yes 이외의 값을 눌렀을 경우
