@@ -146,6 +146,7 @@ public class MyFrame extends JFrame implements ActionListener {
 		switch (e.getActionCommand()) {
 		case "전체내용":
 			lb7.setText("전체내용 나오기");
+			ta.setText("");
 			for (Account acc : list) {
 				ta.append(acc.toString());
 				ta.append("\n");
