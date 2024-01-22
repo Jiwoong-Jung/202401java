@@ -17,6 +17,7 @@ public class A {
 	static void method2() {
 //		B var1 = new B();
 		C var2 = new C();
+		B var1 = new A().new B();
 	}
 	
 	class B {}
