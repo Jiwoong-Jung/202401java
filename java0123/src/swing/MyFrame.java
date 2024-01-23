@@ -8,18 +8,14 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
-class MyEvent implements ActionListener {
-	String str;
-	MyEvent(String str) {
-		this.str = str;
-	}
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		System.out.println(str);
-	}
-}
 public class MyFrame extends JFrame {
-//	static String str = "안녕";
+	class MyEvent implements ActionListener {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			System.out.println(tf.getText());
+		}
+	}
+	String str = "안녕";
 	JTextField tf = new JTextField(10);
 	JButton bt = new JButton("실행");
 	public MyFrame() {
@@ -30,7 +26,7 @@ public class MyFrame extends JFrame {
 		this.setSize(400, 300);
 		this.setVisible(true);
 		con.add(tf); con.add(bt);
-		bt.addActionListener(new MyEvent("안녕?"));
+		bt.addActionListener(new MyEvent());
 	}
 	
 	public static void main(String[] args) {
