@@ -1,6 +1,12 @@
 package page413;
 
 public class A {
+	public static void main(String[] ar) {
+		A a = new A();
+		B b = a.new B();
+		b.method();
+	}
+	
 	int field1;
 	void method1() {
 		System.out.println("method1()");
@@ -14,7 +20,5 @@ public class A {
 		}
 	}
 	
-	public static void main(String[] ar) {
-		System.out.println("실행");
-	}
+	
 }
