@@ -5,10 +5,13 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class JdbcArrayEx {
 
 	public static void main(String[] args) {
+		List<String> list = new ArrayList<>();
 		String url = "jdbc:mysql://localhost:3306/firm";
 		String id = "root";
 		String pass = "mysql";
@@ -26,7 +29,9 @@ public class JdbcArrayEx {
 				int deptno = rs.getInt("deptno");
 				String dname = rs.getString("dname");
 				String loc = rs.getString("loc");
-				System.out.println(deptno+", "+dname+", "+loc);
+				String str = deptno+", "+dname+", "+loc;
+//				System.out.println(deptno+", "+dname+", "+loc);
+				list.add(str);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
