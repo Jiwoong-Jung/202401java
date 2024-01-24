@@ -8,10 +8,25 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+class Dept {
+	int deptno;
+	String dname;
+	String loc;
+	
+	public Dept(int deptno, String dname, String loc) {
+		super();
+		this.deptno = deptno;
+		this.dname = dname;
+		this.loc = loc;
+	}
+	
+	
+}
+
 public class JdbcArrayEx {
 
 	public static void main(String[] args) {
-		List<String> list = new ArrayList<>();
+		List<Dept> list = new ArrayList<>();
 		String url = "jdbc:mysql://localhost:3306/firm";
 		String id = "root";
 		String pass = "mysql";
@@ -29,9 +44,10 @@ public class JdbcArrayEx {
 				int deptno = rs.getInt("deptno");
 				String dname = rs.getString("dname");
 				String loc = rs.getString("loc");
-				String str = deptno+", "+dname+", "+loc;
+//				String str = deptno+", "+dname+", "+loc;
 //				System.out.println(deptno+", "+dname+", "+loc);
-				list.add(str);
+				Dept dept = new Dept(deptno, dname, loc);
+				list.add(dept);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -42,10 +58,9 @@ public class JdbcArrayEx {
 		}
 		
 		// list에 있는 자료를 모두 출력하세요. (향상된 반복문 사용)
-		for (String s : list) {
+		for (Dept s : list) {
 			System.out.println(s);
 		}
-		// 문제점? dname 컬럼만 사용하고 싶다?
 		
 	}
 
