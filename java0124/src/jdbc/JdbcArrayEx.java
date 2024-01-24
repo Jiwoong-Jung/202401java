@@ -43,6 +43,12 @@ class Dept {
 	public void setLoc(String loc) {
 		this.loc = loc;
 	}
+
+	@Override
+	public String toString() {
+		return "Dept [deptno=" + deptno + ", dname=" + dname + ", loc=" + loc + "]";
+	}
+	
 	
 	
 	
@@ -82,9 +88,16 @@ public class JdbcArrayEx {
 			e.printStackTrace();
 		}
 		
+		System.out.println(list);
+		
+		for (Dept dept : list) {
+			System.out.println(dept);
+		}
 		// list에 있는 자료를 모두 출력하세요. (향상된 반복문 사용)
 		for (Dept dept : list) {
-			System.out.println(dept); // 이 라인은 삭제하고 각 컬럼별로 출력해 보세요.
+			System.out.println(dept.getDeptno()+"\t"
+		                      +dept.getDname()+"\t"
+		                      +dept.getLoc()); 
 		}
 		
 	}
