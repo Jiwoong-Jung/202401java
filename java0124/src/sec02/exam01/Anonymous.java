@@ -16,8 +16,23 @@ public class Anonymous {
 	
 	
 	void method1() {
-		
+		Person localVar = new Person() {
+			void walk() {
+				System.out.println("산책");
+			}
+
+			@Override
+			void wake() {
+				System.out.println("7시 기상");
+				walk();
+			}
+			
+			
+		};
+		localVar.wake();
 	}
+	
+	
 	void method2(Person person) {
 		
 	}
