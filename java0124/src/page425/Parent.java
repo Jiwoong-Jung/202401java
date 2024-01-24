@@ -3,6 +3,15 @@ package page425;
 public class Parent {
 	void parentMethod() {};
 }
+class Child extends Parent {
+
+	@Override
+	void parentMethod() {
+		// TODO Auto-generated method stub
+		super.parentMethod();
+	}
+	
+}
 
 class  A {
 	void method1(Parent p) {}
