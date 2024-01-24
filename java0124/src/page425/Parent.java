@@ -8,7 +8,15 @@ class  A {
 	void method1(Parent p) {}
 	
 	void method2() {
-		method1(new Parent());
+		method1(new Parent() {
+
+			@Override
+			void parentMethod() {
+				// TODO Auto-generated method stub
+				super.parentMethod();
+			}
+			
+		});
 	}
 	
 	Parent field = new Parent() {
