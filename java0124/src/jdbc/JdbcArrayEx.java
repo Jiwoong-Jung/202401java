@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 class Dept {
-	int deptno;
-	String dname;
-	String loc;
+	private int deptno;
+	private String dname;
+	private String loc;
 	
 	public Dept(int deptno, String dname, String loc) {
 		super();
@@ -19,6 +19,31 @@ class Dept {
 		this.dname = dname;
 		this.loc = loc;
 	}
+
+	public int getDeptno() {
+		return deptno;
+	}
+
+	public void setDeptno(int deptno) {
+		this.deptno = deptno;
+	}
+
+	public String getDname() {
+		return dname;
+	}
+
+	public void setDname(String dname) {
+		this.dname = dname;
+	}
+
+	public String getLoc() {
+		return loc;
+	}
+
+	public void setLoc(String loc) {
+		this.loc = loc;
+	}
+	
 	
 	
 }
@@ -58,8 +83,8 @@ public class JdbcArrayEx {
 		}
 		
 		// list에 있는 자료를 모두 출력하세요. (향상된 반복문 사용)
-		for (Dept s : list) {
-			System.out.println(s);
+		for (Dept dept : list) {
+			System.out.println(dept); // 이 라인은 삭제하고 각 컬럼별로 출력해 보세요.
 		}
 		
 	}
