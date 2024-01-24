@@ -23,6 +23,7 @@ public class JdbcEx {
 		Connection conn = DriverManager.getConnection(url,id,pass);
 		Statement stmt = conn.createStatement();
 		String sql = "insert into dept(deptno, dname, loc) values ("+deptno+", '"+dname+"', '"+loc+"')";
+		System.out.println(sql);
 		int result = stmt.executeUpdate(sql);
 		if (result == 1) {
 			System.out.println("입력성공!");
