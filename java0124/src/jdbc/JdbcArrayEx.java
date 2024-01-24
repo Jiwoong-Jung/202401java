@@ -22,8 +22,11 @@ public class JdbcArrayEx {
 			stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 			while(rs.next()) {
-				int deptno = rs.getInt(1);
-				System.out.println(deptno);
+//				int deptno = rs.getInt(1);
+				int deptno = rs.getInt("deptno");
+				String dname = rs.getString("dname");
+				String loc = rs.getString("loc");
+				System.out.println(deptno+", "+dname+", "+loc);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
