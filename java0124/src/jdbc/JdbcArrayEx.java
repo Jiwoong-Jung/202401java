@@ -41,12 +41,11 @@ public class JdbcArrayEx {
 			e.printStackTrace();
 		}
 		
-		
-		
-		
-		
-		
-		
+		// list에 있는 자료를 모두 출력하세요. (향상된 반복문 사용)
+		for (String s : list) {
+			System.out.println(s);
+		}
+		// 문제점? dname 컬럼만 사용하고 싶다?
 		
 	}
 
