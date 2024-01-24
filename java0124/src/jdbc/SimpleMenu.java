@@ -10,10 +10,10 @@ public class SimpleMenu{
     private static final String DB_URL = "jdbc:mysql://localhost:3306/your_database";
     private static final String DB_USER = "your_username";
     private static final String DB_PASSWORD = "your_password";
-
+    static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
-            Scanner scanner = new Scanner(System.in);
+            
             boolean exit = false;
 
             while (!exit) {
@@ -22,16 +22,16 @@ public class SimpleMenu{
                 System.out.println("3. 종료");
                 System.out.print("선택하세요: ");
 
-                int choice = scanner.nextInt();
+                String choice = scanner.nextLine();
 
                 switch (choice) {
-                    case 1:
+                    case "1":
                         viewData(connection);
                         break;
-                    case 2:
+                    case "2":
                         insertData(connection);
                         break;
-                    case 3:
+                    case "3":
                         exit = true;
                         break;
                     default:
