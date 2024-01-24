@@ -34,6 +34,6 @@ public class Anonymous {
 	
 	
 	void method2(Person person) {
-		
+		person.wake();
 	}
 }
