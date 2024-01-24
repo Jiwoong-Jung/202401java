@@ -14,14 +14,17 @@ class Child extends Parent {
 }
 
 class  A {
-	void method1(Parent p) {}
+	void method1(Parent p) {
+
+	}
 	
 	void method2() {
 		method1(new Parent() {
 
+			int x;
 			@Override
 			void parentMethod() {
-				// TODO Auto-generated method stub
+				System.out.println(this.x);
 				super.parentMethod();
 			}
 			
