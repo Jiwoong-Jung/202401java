@@ -11,7 +11,7 @@ public class Class2 {
 		String url = "jdbc:mysql://localhost:3306/firm";
 		String id = "root";
 		String pass = "mysql";
-		String sql = "select * from emp";
+		String sql = "select * from emp where ename = 'JONES'";
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
