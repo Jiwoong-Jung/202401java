@@ -6,7 +6,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class Class1 {
-	public static void main(String[] ar) {
+	
+	void method() {
 		String url = "jdbc:mysql://localhost:3306/firm";
 		String id = "root";
 		String pass = "mysql";
@@ -43,6 +44,10 @@ public class Class1 {
 				} catch (Exception e) {
 				}
 		}
+	}
+	
+	public static void main(String[] ar) {
+
 	}
 
 }
