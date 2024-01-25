@@ -16,7 +16,7 @@ public class Ex {
 	public static void main(String[] args) {
 		ThrowClass tc = new ThrowClass();
 		try {
-			tc.method(11);
+			tc.method(0);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
