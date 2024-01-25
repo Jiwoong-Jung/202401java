@@ -1,8 +1,7 @@
 package sec01.exam01;
 
 class MyClass2 {
-	void method() throws MyException {
-		//...
+	void method() throws MyException  {
 		throw new MyException("나의 예외 상황");
 	}
 }
@@ -17,7 +16,6 @@ public class ExceptionEx {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
 
 }
