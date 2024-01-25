@@ -9,7 +9,9 @@ public class AIOOBEex {
 			
 			System.out.println(str);
 			System.out.println(str1);
-		} catch(ArrayIndexOutOfBoundsException e) {
+		} catch(ArrayIndexOutOfBoundsException e1) {
+//			e.printStackTrace();
+			System.out.println(e1.getMessage());
 			System.out.println("예외 발생!");
 		}
 		
