@@ -2,7 +2,7 @@ package sec01.exam01;
 
 class MyClass2 {
 	void method() throws MyException {
-		//
+		//...
 		throw new MyException("나의 예외 상황");
 	}
 }
