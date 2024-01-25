@@ -7,7 +7,9 @@ public class Prob13 {
 	}
 	void method2() {
 		try {
-			method();
+			return;
+//			method();
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
