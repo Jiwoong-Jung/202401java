@@ -7,11 +7,11 @@ import java.sql.Statement;
 
 public class Class2 {
 	
-	void method() {
+	void method(String ename) {
 		String url = "jdbc:mysql://localhost:3306/firm";
 		String id = "root";
 		String pass = "mysql";
-		String sql = "select * from emp where ename = 'JONES'";
+		String sql = "select * from emp where ename = '"+ename+"'";
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -48,7 +48,7 @@ public class Class2 {
 	
 	public static void main(String[] ar) {
 		Class2 cs = new Class2();
-		cs.method();
+		cs.method("JONES");
 //		method();
 	}
 
