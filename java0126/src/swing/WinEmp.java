@@ -3,6 +3,8 @@ package swing;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -69,6 +71,15 @@ public class WinEmp extends JFrame {
 		this.setLocation(500, 400);
 		this.setSize(500, 300);
 		this.setVisible(true);
+		
+		bt1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				select();
+				
+			}
+		});
 	}
 	
 	public void select() {
