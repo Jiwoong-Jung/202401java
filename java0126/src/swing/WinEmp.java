@@ -99,8 +99,26 @@ public class WinEmp extends JFrame {
 			e.printStackTrace();
 		}
 	}
+	public void insert() {
+		String sql = String.format(
+	    "insert into dept values(%s, '%s', '%s')",
+	     tf1.getText(), tf2.getText(), tf3.getText());
+		try {
+			int res = stmt.executeUpdate(sql);
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
 	
 	public static void main(String[] args) {
 		new WinEmp();
 	}
 }
+
+
+
+
+
