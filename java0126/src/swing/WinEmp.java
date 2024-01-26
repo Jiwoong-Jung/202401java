@@ -45,6 +45,7 @@ public class WinEmp extends JFrame {
 		jp3.add(lb1); jp3.add(tf1);
 		jp3.add(lb2); jp3.add(tf2);
 		jp3.add(lb3); jp3.add(tf3);
+		
 		this.setTitle("DEPT 관리");
 		this.setLocation(500, 400);
 		this.setSize(500, 300);
