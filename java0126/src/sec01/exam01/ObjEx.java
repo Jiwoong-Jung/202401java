@@ -8,6 +8,9 @@ public class ObjEx {
 
 		boolean result = obj1.equals(obj2);
 		System.out.println(result);
+		
+		boolean result2 = (obj1 == obj2);
+		System.out.println(result2);
 	}
 
 }
