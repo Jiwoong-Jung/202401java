@@ -13,11 +13,9 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class WinEmp extends JFrame {
-	JLabel lb1 = new JLabel("부서코드:");
+	
 	JTextField tf1 = new JTextField(5);
-	JLabel lb2 = new JLabel("부서명:");
 	JTextField tf2 = new JTextField(5);
-	JLabel lb3 = new JLabel("부서위치:");
 	JTextField tf3 = new JTextField(5);
 	
 	JButton bt1 = new JButton("전체 내용");
@@ -27,6 +25,9 @@ public class WinEmp extends JFrame {
 	JButton bt5 = new JButton("삭제");
 	JTextArea ta = new JTextArea(10, 40);
 	public WinEmp() {
+		JLabel lb1 = new JLabel("부서코드:");
+		JLabel lb2 = new JLabel("부서명:");
+		JLabel lb3 = new JLabel("부서위치:");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Container con = this.getContentPane();
 		con.setLayout(new BorderLayout());
@@ -44,7 +45,7 @@ public class WinEmp extends JFrame {
 		jp3.add(lb1); jp3.add(tf1);
 		jp3.add(lb2); jp3.add(tf2);
 		jp3.add(lb3); jp3.add(tf3);
-		
+		this.setTitle("DEPT 관리");
 		this.setLocation(500, 400);
 		this.setSize(500, 300);
 		this.setVisible(true);
