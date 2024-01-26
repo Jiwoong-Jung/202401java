@@ -15,7 +15,13 @@ public class ClassEx {
 		System.out.println(clazz2.getName());
 		System.out.println(clazz2.getSimpleName());
 		System.out.println(clazz2.getPackageName());
-
+		
+		//3
+		Car car = new Car();
+		Class clazz3 = car.getClass();
+		System.out.println(clazz3.getName());
+		System.out.println(clazz3.getSimpleName());
+		System.out.println(clazz3.getPackageName());
 	}
 
 }
