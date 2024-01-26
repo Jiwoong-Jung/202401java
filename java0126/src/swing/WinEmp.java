@@ -5,6 +5,7 @@ import java.awt.Container;
 import java.awt.FlowLayout;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -43,7 +44,6 @@ public class WinEmp extends JFrame {
 			e.printStackTrace();
 		}
 
-		
 		JLabel lb1 = new JLabel("부서코드:");
 		JLabel lb2 = new JLabel("부서명:");
 		JLabel lb3 = new JLabel("부서위치:");
@@ -69,6 +69,23 @@ public class WinEmp extends JFrame {
 		this.setLocation(500, 400);
 		this.setSize(500, 300);
 		this.setVisible(true);
+	}
+	
+	public void select() {
+		String sql = "select deptno, dname, loc from dept";
+		try {
+			ResultSet rs = stmt.executeQuery(sql);
+			while(rs.next()) {
+				int deptno = rs.getInt("deptno");
+				String dname = rs.getString("dname");
+				String loc = rs.getString("loc");
+				String str = String.format("%d, %s, %s", 
+						                    deptno, dname, loc);
+				ta.append(str);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public static void main(String[] args) {
