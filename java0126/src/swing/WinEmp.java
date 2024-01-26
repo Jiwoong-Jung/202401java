@@ -104,8 +104,8 @@ public class WinEmp extends JFrame {
 	    "insert into dept values(%s, '%s', '%s')",
 	     tf1.getText(), tf2.getText(), tf3.getText());
 		try {
+			System.out.println(sql);
 			int res = stmt.executeUpdate(sql);
-			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
