@@ -3,6 +3,10 @@ package swing;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.FlowLayout;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -24,7 +28,22 @@ public class WinEmp extends JFrame {
 	JButton bt4 = new JButton("수정");
 	JButton bt5 = new JButton("삭제");
 	JTextArea ta = new JTextArea(10, 40);
+	Connection conn;
+	Statement stmt;
 	public WinEmp() {
+		String url = "jdbc:mysql://localhost:3306/firm";
+		String id = "root";
+		String pass = "mysql";
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			conn = DriverManager.getConnection(url,id,pass);
+			stmt = conn.createStatement();
+		} catch (SQLException | ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+
+		
 		JLabel lb1 = new JLabel("부서코드:");
 		JLabel lb2 = new JLabel("부서명:");
 		JLabel lb3 = new JLabel("부서위치:");
