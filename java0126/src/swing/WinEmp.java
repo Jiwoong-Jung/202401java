@@ -14,11 +14,11 @@ import javax.swing.JTextField;
 
 public class WinEmp extends JFrame {
 	JLabel lb1 = new JLabel("부서코드:");
-	JTextField tf1 = new JTextField(10);
+	JTextField tf1 = new JTextField(5);
 	JLabel lb2 = new JLabel("부서명:");
-	JTextField tf2 = new JTextField(10);
+	JTextField tf2 = new JTextField(5);
 	JLabel lb3 = new JLabel("부서위치:");
-	JTextField tf3 = new JTextField(10);
+	JTextField tf3 = new JTextField(5);
 	
 	JButton bt1 = new JButton("전체 내용");
 	JButton bt2 = new JButton("입력");
@@ -38,6 +38,12 @@ public class WinEmp extends JFrame {
 		JPanel jp2 = new JPanel(new FlowLayout());
 		jp2.add(scroll);
 		con.add(jp2, BorderLayout.CENTER);
+		
+		JPanel jp3 = new JPanel(new FlowLayout());
+		con.add(jp3, BorderLayout.NORTH);
+		jp3.add(lb1); jp3.add(tf1);
+		jp3.add(lb2); jp3.add(tf2);
+		jp3.add(lb3); jp3.add(tf3);
 		
 		this.setLocation(500, 400);
 		this.setSize(500, 300);
