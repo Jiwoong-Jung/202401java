@@ -27,8 +27,9 @@ public class WinEmp extends JFrame {
 		con.add(jp1, BorderLayout.SOUTH);
 		JScrollPane scroll = new JScrollPane(ta);
 		JPanel jp2 = new JPanel(new FlowLayout());
-		con.add(jp2, BorderLayout.CENTER);
 		jp2.add(scroll);
+		con.add(jp2, BorderLayout.CENTER);
+		
 		this.setLocation(500, 400);
 		this.setSize(500, 300);
 		this.setVisible(true);
