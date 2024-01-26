@@ -3,7 +3,7 @@ package sec01.exam08;
 public class SystemTimeExample {
 	public static void main(String[] args) {
 		long time1 = System.nanoTime();
-		long time3 = System.currentTimeMillis();
+		long time3 = System.currentTimeMillis(); // 성능 평가시 활용
 		
 		int sum = 0;
 		for(int i=1; i<=1000000; i++) {

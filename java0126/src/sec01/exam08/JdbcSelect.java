@@ -1,4 +1,4 @@
-package jdbc;
+package sec01.exam08;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
