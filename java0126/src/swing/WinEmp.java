@@ -89,6 +89,14 @@ public class WinEmp extends JFrame {
 				select();
 			}
 		});
+		bt3.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				select2();
+				
+			}
+		});
 	}
 	
 	private void clearTextField() {
@@ -124,6 +132,31 @@ public class WinEmp extends JFrame {
 			e.printStackTrace();
 		}
 		
+	}
+	
+	public void select2() {
+		String sql = String.format("select deptno, dname, loc from dept where dname = '%s'", tf2.getText());
+		try {
+			ResultSet rs = stmt.executeQuery(sql);
+			ta.setText("");
+			if(rs.next()) {
+				int deptno = rs.getInt("deptno");
+				String dname = rs.getString("dname");
+				String loc = rs.getString("loc");
+				String str = String.format("%d, %s, %s\n", 
+						                   deptno, dname, loc);
+				ta.append(str);
+				tf1.setText(deptno+"");
+				tf3.setText(loc);
+			} else {
+				tf1.setText("");
+				tf2.setText("");
+				tf3.setText("");
+				ta.append("해당 자료 없습니다.");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public static void main(String[] args) {
