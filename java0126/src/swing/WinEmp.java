@@ -6,11 +6,20 @@ import java.awt.FlowLayout;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 public class WinEmp extends JFrame {
+	JLabel lb1 = new JLabel("부서코드:");
+	JTextField tf1 = new JTextField(10);
+	JLabel lb2 = new JLabel("부서명:");
+	JTextField tf2 = new JTextField(10);
+	JLabel lb3 = new JLabel("부서위치:");
+	JTextField tf3 = new JTextField(10);
+	
 	JButton bt1 = new JButton("전체 내용");
 	JButton bt2 = new JButton("입력");
 	JButton bt3 = new JButton("이름 검색");
