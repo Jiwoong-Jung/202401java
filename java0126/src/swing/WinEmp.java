@@ -86,12 +86,13 @@ public class WinEmp extends JFrame {
 		String sql = "select deptno, dname, loc from dept";
 		try {
 			ResultSet rs = stmt.executeQuery(sql);
+			ta.setText("");
 			while(rs.next()) {
 				int deptno = rs.getInt("deptno");
 				String dname = rs.getString("dname");
 				String loc = rs.getString("loc");
 				String str = String.format("%d, %s, %s\n", 
-						                    deptno, dname, loc);
+						                   deptno, dname, loc);
 				ta.append(str);
 			}
 		} catch (SQLException e) {
