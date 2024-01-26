@@ -79,7 +79,7 @@ public class WinEmp extends JFrame {
 				int deptno = rs.getInt("deptno");
 				String dname = rs.getString("dname");
 				String loc = rs.getString("loc");
-				String str = String.format("%d, %s, %s", 
+				String str = String.format("%d, %s, %s\n", 
 						                    deptno, dname, loc);
 				ta.append(str);
 			}
