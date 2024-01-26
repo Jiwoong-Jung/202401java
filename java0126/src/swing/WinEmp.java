@@ -85,9 +85,14 @@ public class WinEmp extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				insert();
-				
+				clearTextField();
+				select();
 			}
 		});
+	}
+	
+	private void clearTextField() {
+		tf1.setText(""); tf2.setText(""); tf3.setText("");
 	}
 	
 	public void select() {
