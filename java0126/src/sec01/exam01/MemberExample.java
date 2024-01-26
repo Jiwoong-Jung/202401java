@@ -7,9 +7,8 @@ public class MemberExample {
 		Member obj2 = new Member("blue");
 		Member obj3 = new Member("red");
 		
+		System.out.println(obj1.hashCode());
 		System.out.println(obj1);
-		System.out.println(obj2);
-		System.out.println(obj3);
 		
 		if(obj1.equals(obj2)) {
 			System.out.println("같다.");
