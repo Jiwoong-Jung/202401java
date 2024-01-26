@@ -9,11 +9,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class WinEmp extends JFrame {
-	JButton bt1 = new JButton("버튼1");
-	JButton bt2 = new JButton("버튼2");
-	JButton bt3 = new JButton("버튼3");
-	JButton bt4 = new JButton("버튼4");
-	JButton bt5 = new JButton("버튼5");
+	JButton bt1 = new JButton("전체 내용");
+	JButton bt2 = new JButton("입력");
+	JButton bt3 = new JButton("이름 검색");
+	JButton bt4 = new JButton("수정");
+	JButton bt5 = new JButton("삭제");
 	public WinEmp() {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Container con = this.getContentPane();
