@@ -8,6 +8,13 @@ public class Member {
 	}
 
 	@Override
+	public String toString() {
+		return "Member [id=" + id + "]";
+	}
+
+
+
+	@Override
 	public boolean equals(Object obj) { // 매개변수 다형성
 		if (obj instanceof Member) {   // Member로 객체생성?
 			Member member = (Member) obj;  // 강제 형변환을 왜?
@@ -20,7 +27,7 @@ public class Member {
 
 	@Override
 	public int hashCode() {
-		return id.hashCode();
+		return id.toLowerCase().hashCode();
 	}
 	
 	
