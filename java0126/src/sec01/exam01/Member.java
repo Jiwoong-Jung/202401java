@@ -8,10 +8,10 @@ public class Member {
 	}
 
 	@Override
-	public boolean equals(Object obj) {
-		if (obj instanceof Member) {
+	public boolean equals(Object obj) { // 매개변수 다형성
+		if (obj instanceof Member) {   // Member로 객체생성?
 			Member member = (Member) obj;  // 강제 형변환을 왜?
-			if (id.equals(member.id)) {  // 문자열 비교하려고
+			if (id.equalsIgnoreCase(member.id)) {  // 문자열 비교하려고
 				return true;
 			}
 		}
