@@ -7,6 +7,7 @@ public class StringGetBytesExample {
 		String str = "안녕하세요abc";
 		String nstr = str.replace("abc", "감사합니다");
 		System.out.println(nstr);
+		System.out.println(str);
 		
 		System.out.println(str.length());
 		int index = str.indexOf("가요"); // 못찾으면 -1 리턴
