@@ -3,9 +3,10 @@ package sec01.exam22;
 public class BoxingEx {
 
 	public static void main(String[] args) {
-		Integer num1 = new Integer(3);
-		Integer num2 = new Integer(3);
+		Integer num1 = 128;
+		Integer num2 = 128;
 		System.out.println(num1 == num2);
+		System.out.println(num1.equals(num2));
 		
 		int x = 100;
 		String str = "가나다";
