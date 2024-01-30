@@ -2,6 +2,11 @@ package sec01.exam27;
 
 public class MathExample {
 	public static void main(String[] args) {
+		for (int i=0; i < 10; i++) {
+			int num = (int) (Math.random()*10) + 1;
+			System.out.println(num);
+		}
+		
 		int v1 = Math.abs(-5);   // 절대값
 		double v2 = Math.abs(-3.14);
 		System.out.println("v1=" + v1);
