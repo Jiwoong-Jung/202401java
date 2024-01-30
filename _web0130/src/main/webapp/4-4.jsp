@@ -29,7 +29,8 @@
             <td>가입경로</td>
             <td>
                 <select name="intro">
-                    <option value="웹검색" selected>웹검색</option>
+                	<option value="선택" selected>선택</option>
+                    <option value="웹검색">웹검색</option>
                     <option value="지인소개">지인소개</option>
                     <option value="기타">기타</option>
                 </select>
@@ -39,8 +40,8 @@
             <td>주소지</td>
             <td>
                 <select name="addr" size="4">
-                    <option value="서울" selected>서울</option>
-                    <option value="경기">경기</option>
+                    <option value="서울">서울</option>
+                    <option value="경기" selected>경기</option>
                     <option value="인천">인천</option>
                     <option value="기타">기타</option>
                 </select>
