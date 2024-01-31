@@ -14,6 +14,7 @@ public class BeepPrintEx2 {
 
 			}  
 		}
+		System.out.println("main 종료");
 	}
 
 }

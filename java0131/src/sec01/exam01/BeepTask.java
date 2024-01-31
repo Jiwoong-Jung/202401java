@@ -12,7 +12,7 @@ public class BeepTask implements Runnable {
 
 			}  
 		}
-		
+		System.out.println("BeepTask 종료");
 	}
 
 }
