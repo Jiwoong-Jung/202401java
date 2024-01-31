@@ -7,8 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%= request.getParameter("kor") %>
-<%= request.getParameter("math") %>
-<%= request.getParameter("eng") %>
+<%
+request.setCharacterEncoding("utf-8");
+%>
+국어: <%= request.getParameter("kor") %><br/>
+수학: <%= request.getParameter("math") %><br/>
+영어: <%= request.getParameter("eng") %><br/>
 </body>
 </html>
