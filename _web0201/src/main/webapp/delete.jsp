@@ -21,5 +21,6 @@ pstmt.setString(1, request.getParameter("ename"));
 pstmt.executeUpdate();
 %>
 삭제 완료!
+<button onclick="location.href='select.jsp' ">사원 목록</button>
 </body>
 </html>
