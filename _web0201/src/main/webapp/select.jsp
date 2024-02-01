@@ -12,6 +12,7 @@
 </head>
 <body>
 
+<a href="index.jsp">목록으로</a>
 <%
 String driver="oracle.jdbc.driver.OracleDriver";
 String url="jdbc:oracle:thin:@localhost:1521:xe";

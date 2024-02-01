@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<a href="index.jsp">목록으로</a>
 <form action="insert.jsp" method="post">
 이름<input type="text" name="ename" /><br/>
 직무<input type="text" name="job" /><br/>
