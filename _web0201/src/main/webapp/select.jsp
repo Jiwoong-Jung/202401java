@@ -25,7 +25,9 @@ ResultSet rs = pstmt.executeQuery(); %>
 <%
 while (rs.next()) { %>
 	<tr>
-		<td><%=rs.getString("ename") %></td>
+		<td>
+		<a href="updateForm.jsp?ename=<%=rs.getString("ename") %>">
+		<%=rs.getString("ename") %></a></td>
 		<td><%=rs.getString("job") %></td>
 		<td><%=rs.getString("sal") %></td>
 		<td><a href="delete.jsp?ename=<%=rs.getString("ename")%>">삭제</a></td>
