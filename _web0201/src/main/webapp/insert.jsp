@@ -17,9 +17,9 @@ Class.forName(driver);
 Connection conn = DriverManager.getConnection(url, "scott", "tiger");
 String sql = "insert into emp1(ename, job, sal) values(?, ?, ?)";
 PreparedStatement pstmt = conn.prepareStatement(sql);
-pstmt.setString(1, "홍길동임");
-pstmt.setString(2, "사원");
-pstmt.setDouble(3, 3120);
+pstmt.setString(1, request.getParameter("ename"));
+pstmt.setString(2, request.getParameter("job"));
+pstmt.setDouble(3, Double.parseDouble(request.getParameter("sal")));
 int result = pstmt.executeUpdate();
 if (result == 1) {
 	out.println("입력 성공!");
