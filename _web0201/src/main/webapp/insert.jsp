@@ -26,6 +26,7 @@ if (result == 1) {
 	out.println("입력 성공!");
 }
 %>
+<a href="select.jsp">목록으로</a>
 </body>
 </html>
 
