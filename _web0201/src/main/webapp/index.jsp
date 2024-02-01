@@ -8,7 +8,8 @@
 </head>
 <body>
 <h1>사원 정보</h1>
-<a href="select.jsp">사원 목록</a>
-<a href="insertForm.jsp">사원 입력</a>
+<button onclick="location.href='select.jsp' ">사원 목록</button>
+<button onclick="location.href='insertForm.jsp' ">사원 입력</button>
+
 </body>
 </html>
