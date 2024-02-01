@@ -7,11 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="insert.jsp">
+<form action="insert.jsp" method="post">
 이름<input type="text" name="ename" /><br/>
 직무<input type="text" name="job" /><br/>
 월급<input type="text" name="sal" /><br/>
 <input type="submit" value="확인"/>
+<input type="reset" />
 </form>
 </body>
 </html>

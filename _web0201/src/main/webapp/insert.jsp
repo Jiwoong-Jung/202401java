@@ -11,6 +11,7 @@
 </head>
 <body>
 <%
+request.setCharacterEncoding("utf-8");
 String driver="oracle.jdbc.driver.OracleDriver";
 String url="jdbc:oracle:thin:@localhost:1521:xe";
 Class.forName(driver);
@@ -19,7 +20,7 @@ String sql = "insert into emp1(ename, job, sal) values(?, ?, ?)";
 PreparedStatement pstmt = conn.prepareStatement(sql);
 pstmt.setString(1, request.getParameter("ename"));
 pstmt.setString(2, request.getParameter("job"));
-pstmt.setDouble(3, Double.parseDouble(request.getParameter("sal")));
+pstmt.setString(3, request.getParameter("sal"));
 int result = pstmt.executeUpdate();
 if (result == 1) {
 	out.println("입력 성공!");
