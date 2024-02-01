@@ -24,3 +24,7 @@ pstmt.executeUpdate();
 <button onclick="location.href='select.jsp' ">사원 목록</button>
 </body>
 </html>
+
+
+
+
