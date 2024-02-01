@@ -19,12 +19,11 @@ Connection conn = DriverManager.getConnection(url, "scott", "tiger");
 String sql = "select ename, job, sal from emp1";
 PreparedStatement pstmt = conn.prepareStatement(sql);
 ResultSet rs = pstmt.executeQuery();
-while (rs.next()) {
-	out.println(rs.getString("ename"));
-	out.println(rs.getString("job"));
-	out.println(rs.getString("sal"));
-}
-%>
+while (rs.next()) { %>
+	<%=rs.getString("ename") %>
+<%} %>	
+
+
 </body>
 </html>
 
