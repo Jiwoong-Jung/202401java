@@ -20,12 +20,16 @@ Connection conn = DriverManager.getConnection(url, "scott", "tiger");
 String sql = "select ename, job, sal from emp1";
 PreparedStatement pstmt = conn.prepareStatement(sql);
 ResultSet rs = pstmt.executeQuery(); %>
-<ul>
+<table border="1">
 <%
 while (rs.next()) { %>
-	<li><%=rs.getString("ename") %></li>
+	<tr>
+		<td><%=rs.getString("ename") %></td>
+		<td><%=rs.getString("job") %></td>
+		<td><%=rs.getString("sal") %></td>
+	</tr>
 <%} %>	
-</ul>
+</table>
 
 </body>
 </html>
