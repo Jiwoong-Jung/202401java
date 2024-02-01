@@ -28,6 +28,7 @@ while (rs.next()) { %>
 		<td><%=rs.getString("ename") %></td>
 		<td><%=rs.getString("job") %></td>
 		<td><%=rs.getString("sal") %></td>
+		<td><a href="#">삭제</a></td>
 	</tr>
 <%} %>	
 </table>
