@@ -11,6 +11,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 <%
 String driver="oracle.jdbc.driver.OracleDriver";
 String url="jdbc:oracle:thin:@localhost:1521:xe";
@@ -18,11 +19,13 @@ Class.forName(driver);
 Connection conn = DriverManager.getConnection(url, "scott", "tiger");
 String sql = "select ename, job, sal from emp1";
 PreparedStatement pstmt = conn.prepareStatement(sql);
-ResultSet rs = pstmt.executeQuery();
+ResultSet rs = pstmt.executeQuery(); %>
+<ul>
+<%
 while (rs.next()) { %>
-	<%=rs.getString("ename") %>
+	<li><%=rs.getString("ename") %></li>
 <%} %>	
-
+</ul>
 
 </body>
 </html>
